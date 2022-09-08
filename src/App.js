@@ -61,6 +61,8 @@ function App({signOut, user}) {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Example App</h1>
+
         <h1>{user.attributes.email}</h1>
 
         <input
@@ -85,7 +87,7 @@ function App({signOut, user}) {
               <h2>{note.name}</h2>
               <p>{note.description}</p>
               {
-                note.image && <img src={note.image} style={{width: 400}} />
+                note.image && <img src={note.image} style={{width: 400}} alt={note.image} />
               }
               <button onClick={() => deleteNote(note)}>Delete note</button>
             </div>
@@ -94,6 +96,7 @@ function App({signOut, user}) {
       </div>
         <br></br>
         <button onClick={signOut}>Sign Out</button>
+        <br></br>
       </header>
     </div>
   );
